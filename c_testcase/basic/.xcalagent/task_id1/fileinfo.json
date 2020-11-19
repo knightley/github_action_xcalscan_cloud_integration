@@ -1,0 +1,103 @@
+{
+ "totalLineNum": "119",
+ "numberOfFiles": "6",
+ "sourceType": "agent",
+ "numberOfDirs": "1",
+ "sourceCodeFileId": "",
+ "osType": "linux",
+ "files": [
+  {
+   "fileName": "basic",
+   "parentPath": null,
+   "fileSize": "0",
+   "noOfLines": "0",
+   "type": "DIRECTORY",
+   "filePath": "/home/parallels/public_demo_benchmark/c_testcase/basic",
+   "checksum": "0",
+   "depth": "0",
+   "relativePath": "/",
+   "version": "0",
+   "fileId": "1"
+  },
+  {
+   "fileName": "aob.c",
+   "parentPath": "/",
+   "fileSize": "400",
+   "noOfLines": "17",
+   "type": "FILE",
+   "filePath": "/home/parallels/public_demo_benchmark/c_testcase/basic/aob.c",
+   "checksum": "2955801655",
+   "depth": "1",
+   "relativePath": "aob.c",
+   "version": "1603360200828020730",
+   "fileId": "2"
+  },
+  {
+   "fileName": "msf.c",
+   "parentPath": "/",
+   "fileSize": "350",
+   "noOfLines": "24",
+   "type": "FILE",
+   "filePath": "/home/parallels/public_demo_benchmark/c_testcase/basic/msf.c",
+   "checksum": "2677453824",
+   "depth": "1",
+   "relativePath": "msf.c",
+   "version": "1603360200828020730",
+   "fileId": "3"
+  },
+  {
+   "fileName": "uiv.c",
+   "parentPath": "/",
+   "fileSize": "210",
+   "noOfLines": "14",
+   "type": "FILE",
+   "filePath": "/home/parallels/public_demo_benchmark/c_testcase/basic/uiv.c",
+   "checksum": "4204381654",
+   "depth": "1",
+   "relativePath": "uiv.c",
+   "version": "1603360200828020730",
+   "fileId": "4"
+  },
+  {
+   "fileName": "npd.c",
+   "parentPath": "/",
+   "fileSize": "314",
+   "noOfLines": "16",
+   "type": "FILE",
+   "filePath": "/home/parallels/public_demo_benchmark/c_testcase/basic/npd.c",
+   "checksum": "1339120800",
+   "depth": "1",
+   "relativePath": "npd.c",
+   "version": "1603360200828020730",
+   "fileId": "5"
+  },
+  {
+   "fileName": "dbf.c",
+   "parentPath": "/",
+   "fileSize": "333",
+   "noOfLines": "22",
+   "type": "FILE",
+   "filePath": "/home/parallels/public_demo_benchmark/c_testcase/basic/dbf.c",
+   "checksum": "3605691380",
+   "depth": "1",
+   "relativePath": "dbf.c",
+   "version": "1603360200828020730",
+   "fileId": "6"
+  },
+  {
+   "fileName": "uaf.c",
+   "parentPath": "/",
+   "fileSize": "431",
+   "noOfLines": "26",
+   "type": "FILE",
+   "filePath": "/home/parallels/public_demo_benchmark/c_testcase/basic/uaf.c",
+   "checksum": "3053538604",
+   "depth": "1",
+   "relativePath": "uaf.c",
+   "version": "1603360200828020730",
+   "fileId": "7"
+  }
+ ],
+ "numberOfFilesWithoutPermission": "0",
+ "gitUrl": ""
+}

@@ -32,13 +32,6 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
 
-      # install xcalagent
-      - name: install xcalagent
-        run: |
-          wget -q https://ci-integration.oss-cn-shanghai.aliyuncs.com/xcal-agent.tgz
-          ls
-          #tar -xf xcal-agent.tgz -C $HOME/build && cd $HOME/build/xcal-agent/xcalbuild/linux/bear && sudo rm -rf build && mkdir build && cd build && cmake .. && make && sudo make install
-
       # Runs a set of commands using the runners shell
       - name: some testing
         run: |
@@ -46,5 +39,25 @@ jobs:
           which python3
           ls
           pwd
+
+      # install xcalagent
+      - name: install xcalagent
+        run: |
+          wget -q https://ci-integration.oss-cn-shanghai.aliyuncs.com/xcal-agent.tgz
+          tar -xf xcal-agent.tgz -C $HOME/work
+          cd $HOME/work/xcal-agent/xcalbuild/linux/bear
+          sudo rm -rf build
+          mkdir build
+          cd build
+          cmake ..
+          make
+          sudo make install
+          export PYTHONPATH=$HOME/work/xcal-agent/agent:$HOME/work/xcal-agent/agent/commondef/src
+          echo $PYTHONPATH
+
+      # Runs a set of commands using the runners shell
+      - name: real build
+        run: |
           cd /home/runner/work/github_action_xcalscan_cloud_integration/github_action_xcalscan_cloud_integration/c_testcase/basic
           make
+          echo $PYTHONPATH

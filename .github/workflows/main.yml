@@ -79,6 +79,7 @@ jobs:
       # run submit task
       - name: run submit task
         run: |
+          pip3 install boto3
           cd $HOME/work/github_action_xcalscan_cloud_integration/github_action_xcalscan_cloud_integration/install
           . ./install_submit_task.sh
           . ./set_path.sh

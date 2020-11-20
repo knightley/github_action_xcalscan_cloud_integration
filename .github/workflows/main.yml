@@ -55,9 +55,17 @@ jobs:
           export PYTHONPATH=$HOME/work/xcal-agent/agent:$HOME/work/xcal-agent/agent/commondef/src
           echo $PYTHONPATH
 
-      # Runs a set of commands using the runners shell
+      # run make to build project
       - name: real build
         run: |
-          cd /home/runner/work/github_action_xcalscan_cloud_integration/github_action_xcalscan_cloud_integration/c_testcase/basic
+          cd $HOME/work/github_action_xcalscan_cloud_integration/github_action_xcalscan_cloud_integration/c_testcase/basic
           make
           echo $PYTHONPATH
+
+      # run xcal-agent
+      - name: run xcal-agent
+        run: |
+          export PYTHONPATH=$HOME/work/xcal-agent/agent:$HOME/work/xcal-agent/agent/commondef/src
+          echo $PYTHONPATH
+          cd $HOME/work/github_action_xcalscan_cloud_integration/github_action_xcalscan_cloud_integration/c_testcase/basic
+          $HOME/work/xcal-agent/tools/xcal-agent.py -pc $HOME/work/github_action_xcalscan_cloud_integration/github_action_xcalscan_cloud_integration/xcal-preprocess.conf -a -d

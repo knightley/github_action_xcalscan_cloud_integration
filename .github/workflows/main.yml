@@ -52,8 +52,15 @@ jobs:
           cmake ..
           make
           sudo make install
-          export PYTHONPATH=$HOME/work/xcal-agent/agent:$HOME/work/xcal-agent/agent/commondef/src
-          echo $PYTHONPATH
+
+      # install submit task
+      - name: install submit task
+        run: |
+          wget -q https://ci-integration.oss-cn-shanghai.aliyuncs.com/submit_task.tgz
+          tar -zxvf submit_task.tgz -C $HOME/work/github_action_xcalscan_cloud_integration/github_action_xcalscan_cloud_integration
+          cd $HOME/work/github_action_xcalscan_cloud_integration/github_action_xcalscan_cloud_integration/install
+          . ./install_submit_task.sh
+          . ./set_path.sh
 
       # run make to build project
       - name: real build
@@ -69,3 +76,6 @@ jobs:
           echo $PYTHONPATH
           cd $HOME/work/github_action_xcalscan_cloud_integration/github_action_xcalscan_cloud_integration/c_testcase/basic
           $HOME/work/xcal-agent/tools/xcal-agent.py -pc $HOME/work/github_action_xcalscan_cloud_integration/github_action_xcalscan_cloud_integration/xcal-preprocess.conf -a -d
+          ls
+          tree .xcalagent
+          which submit_task.sh

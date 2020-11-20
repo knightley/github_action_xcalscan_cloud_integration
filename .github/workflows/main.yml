@@ -58,9 +58,6 @@ jobs:
         run: |
           wget -q https://ci-integration.oss-cn-shanghai.aliyuncs.com/submit_task.tgz
           tar -zxvf submit_task.tgz -C $HOME/work/github_action_xcalscan_cloud_integration/github_action_xcalscan_cloud_integration
-          cd $HOME/work/github_action_xcalscan_cloud_integration/github_action_xcalscan_cloud_integration/install
-          . ./install_submit_task.sh
-          . ./set_path.sh
 
       # run make to build project
       - name: real build
@@ -78,11 +75,14 @@ jobs:
           $HOME/work/xcal-agent/tools/xcal-agent.py -pc $HOME/work/github_action_xcalscan_cloud_integration/github_action_xcalscan_cloud_integration/xcal-preprocess.conf -a -d
           ls -a
           ls .xcalagent
-          which submit_task.sh
 
       # run submit task
       - name: run submit task
         run: |
+          cd $HOME/work/github_action_xcalscan_cloud_integration/github_action_xcalscan_cloud_integration/install
+          . ./install_submit_task.sh
+          . ./set_path.sh
+          which submit_task.sh
           export PATH=$PATH:$HOME/github_action_xcalscan_cloud_integration/github_action_xcalscan_cloud_integration/bin
           echo $PATH
           cd $HOME/work/github_action_xcalscan_cloud_integration/github_action_xcalscan_cloud_integration/c_testcase/basic

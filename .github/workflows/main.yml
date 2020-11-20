@@ -76,6 +76,19 @@ jobs:
           echo $PYTHONPATH
           cd $HOME/work/github_action_xcalscan_cloud_integration/github_action_xcalscan_cloud_integration/c_testcase/basic
           $HOME/work/xcal-agent/tools/xcal-agent.py -pc $HOME/work/github_action_xcalscan_cloud_integration/github_action_xcalscan_cloud_integration/xcal-preprocess.conf -a -d
-          ls
-          tree .xcalagent
+          ls -a
+          ls .xcalagent
           which submit_task.sh
+
+      # run submit task
+      - name: run submit task
+        run: |
+          export PATH=$PATH:$HOME/github_action_xcalscan_cloud_integration/github_action_xcalscan_cloud_integration/bin
+          echo $PATH
+          cd $HOME/work/github_action_xcalscan_cloud_integration/github_action_xcalscan_cloud_integration/c_testcase/basic
+          cd "$(dirname "$(find . -type f -name xcal-task.conf | head -1)")"
+          before_submit.sh
+          ls
+          cat xcal-task.conf
+          submit_task.sh xcal-task.conf
+
